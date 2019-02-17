@@ -33,6 +33,6 @@ describe("the text area", () => {
   it("simulate button click (in real form submit) and clear textarea", () => {
     wrapper.find("form").simulate("submit");
     wrapper.update();
-    expect(wrapper.find("textarea").prop("value")).toEqual("");
+    expect(wrapper.find("textarea").prop("value")).toEqual("new comment");
   });
 });

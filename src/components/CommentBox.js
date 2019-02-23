@@ -8,7 +8,6 @@ class CommentBox extends Component {
   };
 
   handleChange = e => {
-    e.preventDefault();
     this.setState({ comment: e.target.value });
   };
 
@@ -20,7 +19,7 @@ class CommentBox extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubumit}>
+      <form onSubmit={this.handleSubmit}>
         <h2>Add a comment:</h2>
         <textarea onChange={this.handleChange} value={this.state.comment} />
         <div>

@@ -19,13 +19,16 @@ class CommentBox extends Component {
 
   render() {
     return (
-      <form onSubmit={this.handleSubmit}>
-        <h2>Add a comment:</h2>
-        <textarea onChange={this.handleChange} value={this.state.comment} />
-        <div>
-          <button>Submit comment</button>
-        </div>
-      </form>
+      <div>
+        <form onSubmit={this.handleSubmit}>
+          <h2>Add a comment:</h2>
+          <textarea onChange={this.handleChange} value={this.state.comment} />
+          <div>
+            <button>Submit comment</button>
+          </div>
+        </form>
+        <button onClick={this.props.fetchComment}>Fetch comments</button>
+      </div>
     );
   }
 }

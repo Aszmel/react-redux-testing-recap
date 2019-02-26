@@ -34,10 +34,19 @@ it("can fetch a list of comments and display them", done => {
   wrapper.find(".fetch-comments").simulate("click");
   // *** adding 'pause' to let moxios have time before last test ***
   // Expect to find a list of comments
-  setTimeout(() => {
+
+  moxios.wait(() => {
     wrapper.update();
     expect(wrapper.find("li").length).toEqual(2);
     done();
     wrapper.unmount();
-  }, 100);
+  });
+
+  // *** OBSOLETE EDUCATIONAL CODE, ABOVE USED MOXIOS INBUILD FUN
+  //   setTimeout(() => {
+  //     wrapper.update();
+  //     expect(wrapper.find("li").length).toEqual(2);
+  //     done();
+  //     wrapper.unmount();
+  //   }, 100);
 });
